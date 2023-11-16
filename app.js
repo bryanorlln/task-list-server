@@ -1,22 +1,15 @@
 const express = require('express');
+const listViewRouter = require('./list-view-router');
+const listEditRouter = require('./list-edit-router');
 const app = express();
 
-const listadetareas = [
-    {
-        id: '123456',
-        isCompleted: false,
-        description: 'Walk the dog'
-    },
-    
-];
+app.use('/tasks/view', listViewRouter);
 
-app.get('/tareas', (req, res) => {
-    res.json(listadetareas);
-});
+app.use('/tasks/edit', listEditRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
 });
 
-//para iniciar escribe en la terminal npm run dev
+//para ver una ruta usa http://localhost:3000/tasks/view/incomplete
