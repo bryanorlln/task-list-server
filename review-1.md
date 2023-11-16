@@ -1,10 +1,10 @@
 
-![Logo de AdaSchool](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+![Logo de AdaSchool](/images/ada.JPG)
 
 Estos proyectos son parte del bootcamp AdaSchool
 
 #¿Qué es mi producto y para que sirve?
-Este producto es un servidor para ingresar tareas donde se podra visualizarlas
+Este producto es un servidor para el ingreso de tareas mediante comandos 
 
 #¿Cuáles son las funcionalidades más importantes y porque los usuarios las usarían?
-sus funcionalidades son de editar y mirar que tareas hay ingresadas, completadas como actualizar y eliminar.
+Sus funcionalidades van desde editar, actualizar y eliminar las tareas que se han ingresado y asi el usuario pueda tener mayor control organizando sus tareas.
