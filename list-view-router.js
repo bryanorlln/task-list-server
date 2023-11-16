@@ -10,14 +10,25 @@ const tasks = [
     
 ];
 
+// Middleware para validar parámetros
+const validateParams = (req, res, next) => {
+    const { type } = req.query;
+
+    if (type !== 'completed' && type !== 'incomplete') {
+        return res.status(400).send('Error 400: Parámetro inválido');
+    }
+    
+    next();
+};
+
 // Ruta para listar tareas completas
-listViewRouter.get('/completed', (req, res) => {
+listViewRouter.get('/completed', validateParams, (req, res) => {
     const completedTasks = tasks.filter(task => task.isCompleted);
     res.json(completedTasks);
 });
 
 // Ruta para listar tareas incompletas
-listViewRouter.get('/incomplete', (req, res) => {
+listViewRouter.get('/incomplete', validateParams, (req, res) => {
     const incompleteTasks = tasks.filter(task => !task.isCompleted);
     res.json(incompleteTasks);
 });
